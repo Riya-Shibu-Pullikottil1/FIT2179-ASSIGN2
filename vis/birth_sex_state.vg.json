@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 450,
+  "title": "Male and Female Births by State",
+  "data": {
+    "url": "data/birth_sex_ethnic_state.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.sex == 'female' ? -datum.abs : datum.abs",
+      "as": "signed_births"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State"
+    },
+    "x": {
+      "field": "signed_births",
+      "type": "quantitative",
+      "title": "Number of Births"
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "title": "Sex"
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal"},
+      {"field": "sex", "type": "nominal"},
+      {"field": "abs", "type": "quantitative", "title": "Births"}
+    ]
+  }
+}

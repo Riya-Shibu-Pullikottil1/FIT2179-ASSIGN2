@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 380,
+  "title": "Stillbirth Rates Rose After 2020 Before Slightly Falling",
+  "data": {
+    "url": "data/stillbirth.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date",
+        "abs": "number",
+        "rate": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "year",
+      "title": "Year"
+    },
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Stillbirth rate",
+      "scale": {
+        "zero": true
+      }
+    },
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "year",
+        "title": "Year"
+      },
+      {
+        "field": "abs",
+        "type": "quantitative",
+        "title": "Stillbirths"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Stillbirth rate"
+      }
+    ]
+  }
+}

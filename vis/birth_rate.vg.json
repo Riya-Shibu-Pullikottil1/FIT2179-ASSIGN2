@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "title": "Malaysia's Birth Rate Has Been Declining",
+  "data": {
+    "url": "data/birth.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date",
+        "abs": "number",
+        "rate": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "year",
+      "title": "Year"
+    },
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Birth Rate per 1,000 population",
+      "scale": {"zero": false}
+    }
+  }
+}

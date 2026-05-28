@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "title": "Births Still Outnumber Deaths, But the Gap Is Shrinking",
+  "data": {
+    "url": "data/birth_death_long.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "year",
+      "title": "Year"
+    },
+    "y": {
+      "field": "abs",
+      "type": "quantitative",
+      "title": "Number of people"
+    },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "title": ""
+    },
+    "tooltip": [
+      {"field": "date", "type": "temporal", "timeUnit": "year", "title": "Year"},
+      {"field": "type", "type": "nominal", "title": "Type"},
+      {"field": "abs", "type": "quantitative", "title": "Number"}
+    ]
+  }
+}

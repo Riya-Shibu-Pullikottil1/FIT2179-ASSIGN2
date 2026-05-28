@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Malaysia Births and Deaths</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+  <h1>Malaysia's Demographic Transition</h1>
+
+  <div id="birth_rate"></div>
+  <div id="death_rate"></div>
+  <div id="births_vs_deaths"></div>
+  <div id="state_birth_map"></div>
+  <div id="birth_sex_state"></div>
+  <div id="birth_ethnic_area"></div>
+  <div id="maternal_death_heatmap"></div>
+  <div id="early_childhood_small_multiples"></div>
+  <div id="stillbirth_lollipop"></div>
+  <div id="population_pyramid"></div>
+
+  <script>
+  vegaEmbed("#birth_rate", "vis/birth_rate.vg.json");
+  vegaEmbed("#death_rate", "vis/death_rate.vg.json");
+  vegaEmbed("#births_vs_deaths", "vis/births_vs_deaths.vg.json");
+  vegaEmbed("#state_birth_map", "vis/state_birth_rate_map.vg.json");
+  vegaEmbed("#birth_sex_state", "vis/birth_sex_state.vg.json");
+  vegaEmbed("#birth_ethnic_area", "vis/birth_ethnic_area.vg.json");
+  vegaEmbed("#maternal_death_heatmap", "vis/maternal_death_heatmap.vg.json");
+  vegaEmbed("#early_childhood_small_multiples", "vis/early_childhood_small_multiples.vg.json");
+  vegaEmbed("#stillbirth_lollipop", "vis/stillbirth_trend.vg.json");
+  vegaEmbed("#population_pyramid", "vis/population_pyramid.vg.json");
+
+
+
+</script>
+</body>
+</html>
+
